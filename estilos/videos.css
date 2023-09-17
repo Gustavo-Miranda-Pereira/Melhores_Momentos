@@ -1,7 +1,7 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap');
 
-
-*{
+* {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
@@ -9,17 +9,23 @@
     text-decoration: none;
 }
 
-header{
+body {
+    background-color: #01000E;
+}
+
+/*Header*/
+
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1.3em;
     align-items: center;
     width: 100%;
-    background-color: #0a0b18;
+    background-color: #2e006b;
 }
 
-.nav-btn{
+.nav-btn {
     color: #fff;
     display: none;
 }
@@ -28,7 +34,7 @@ header{
     display: none;
 }
 
-.nav-links{
+.nav-links {
     width: 50%;
     display: inline-flex;
     justify-content: flex-end;
@@ -38,102 +44,109 @@ header{
     border-radius: 0 0 10px 10px;
 }
 
-.nav-links  a {
+.nav-links a {
     display: inline-block;
     padding: 10px 10px;
     text-decoration: none;
     color: #efefef;
 }
 
-.nav-links  a:hover {
+.nav-links a:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.logo{
+.logo {
     width: 60%;
 }
 
-body{
-    background-color:#01000e;
-    align-items: center;
-}
+/*Header*/
 
-h3{
-    font-size: 1.75em;
-}
+/*conteúdo principal*/
 
-main{
-    color: #ffff;
-    justify-content: center; 
+main {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: row;  
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.img-banner{
-    width: 50%;
+#titulo {
+    width: 100%;
+    height: 20%;
 }
 
-.banner{
-    background-color: #101220;
+#video {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.conteiner{
-    padding: 32px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.thumb{
-    width: 80%;
-    border: 1px solid #8900fa;
-    border-radius: 10px;
-    position: center;
-}
-
-.quadrantes{
+h1 {
+    color: white;
     text-align: center;
-    font-size: 8pt;
-    width: 33.3%;
-    padding-block: 25px;
+    padding: 15px;
+    font-size: 2.6em;
 }
 
-@media (max-width:600px) {
-    .quadrantes{
+iframe {
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+button {
+    width: 120px;
+    height: 30px;
+    margin: auto;
+    color: #2e006b;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px rgba(59, 59, 59, 0.39);
+}
+
+button:hover {
+    background-color: grey;
+}
+
+button>a {
+    color: #2e006b;
+    text-decoration: none;
+}
+
+/*conteúdo principal*/
+
+/*mobile version*/
+@media (max-width:768px) {
+    header {
         width: 100%;
-        font-size: 6pt;
+        padding: 10px;
+        justify-content: space-between;
     }
-    .logo{
-        width: 30%;
-    }
+
     .nav-btn {
-        display: inline-block;
-      }
-    .nav-btn  label {
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;
-        width: 50px;
-        height: 50px;
-        padding: 15px;
-        border: none;
-        border-top-right-radius: 10px;
-      }
-    .nav-btn  label:hover,.nav  #nav-check:checked ~ .nav-btn  label {
+        display: block;
+    }
+
+    .menu-btn {
+        width: 40px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .menu-btn:hover,
+    .nav #nav-check:checked~.nav-btn label {
         background-color: rgba(0, 0, 0, 0.3);
         cursor: pointer;
-      }
-    .nav-btn  label  span {
+    }
+
+    .nav-btn label span {
         display: block;
         width: 25px;
         height: 5px;
         background-color: #eee;
         border-radius: 5px;
-      }
+    }
+
     .nav-links {
         position: absolute;
         display: block;
@@ -144,17 +157,28 @@ main{
         overflow-y: hidden;
         top: 50px;
         left: 0px;
-      }
-    .nav-links  a {
+    }
+
+    .nav-links a {
         display: block;
         width: 100%;
         padding-left: 20px;
-      }
-    #nav-check:not(:checked) ~ .nav-links {
-        height: 0px;
-      }
-    #nav-check:checked ~ .nav-links {
-        height: 250px;
-        overflow-y: hidden;
-      }
     }
+
+    #nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    #nav-check:checked~.nav-links {
+        margin-top: 25px;
+        height: 150px;
+        overflow-y: hidden;
+    }
+
+    iframe {
+        height: 250px;
+        width: 70%;
+    }
+}
+
+/*mobile version*/

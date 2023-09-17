@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap');
+
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.3em;
+    align-items: center;
+    width: 100%;
+    background-color: #2e006b;
+}
+
+.nav-btn {
+    color: #fff;
+    display: none;
+}
+
+#nav-check {
+    display: none;
+}
+
+.nav-links {
+    width: 50%;
+    display: inline-flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 60%;
+}
+
+body {
+    background-color: #01000e;
+    align-items: center;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+main {
+    color: #ffff;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.img-banner {
+    width: 50%;
+}
+
+.banner {
+    background:url(../imagens/fundo_paralax.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner {
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.thumb {
+    width: 80%;
+    border: 1px solid #8900fa;
+    border-radius: 10px;
+    position: center;
+}
+
+.quadrantes {
+    text-align: center;
+    font-size: 8pt;
+    width: 33.3%;
+    padding-block: 25px;
+}
+
+
+
+@media (max-width:768px) {
+    header {
+        width: 100%;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        display: block;
+    }
+
+    .quadrantes {
+        width: 100%;
+        font-size: 6pt;
+    }
+
+    .menu-btn{
+        width: 40px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .menu-btn:hover,
+    .nav #nav-check:checked~.nav-btn label {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+
+    .nav-btn label span {
+        display: block;
+        width: 25px;
+        height: 5px;
+        background-color: #eee;
+        border-radius: 5px;
+    }
+
+    .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #060020;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    #nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    #nav-check:checked~.nav-links {
+        margin-top: 25px;
+        height: 150px;
+        overflow-y: hidden;
+    }
+}
